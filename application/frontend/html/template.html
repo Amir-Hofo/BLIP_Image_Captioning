@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BLIP Image Captioning</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <footer>
+        <a id="portfolio_id" href="https://amir-hofo.github.io/Portfolio" 
+           target="_blank">my portfolio</a>
+        </footer>
+
+        <!-- main box -->
+        <div class="main_box_cls">
+            <p class="tytle_text_cls">Image Caption Generator</p>
+            <!-- upload box -->
+            <div class="upload_box_cls">
+                <input type= "file" id= "input_image_id" 
+                       accept= "image/*" style= "display: none;">
+                <label for="input_image_id"> 
+                    <img class="displayed_image_cls" alt="upload image"
+                         src="../assets/image/imgbox.png"> <br>
+                    <span>Upload Image</span>
+                </label>
+            </div>
+            <!-- caption -->
+            <button id="generate_btn_id">Generate Caption</button>
+            <div id="output_caption_id" class="caption_cls">Caption:</div>
+        </div>
+
+    </body>
+
+</html>
