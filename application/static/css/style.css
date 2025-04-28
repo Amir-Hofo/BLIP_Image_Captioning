@@ -117,7 +117,8 @@ main{
     font-size: 22px;
     border: 2px solid rgba(128, 128, 128, 0.2);
     border-radius: 5px;
-    height: 15vh;
+    height: 20vh;
     margin-top: 3px;
     padding: 3px;
+    overflow: auto;
 }
