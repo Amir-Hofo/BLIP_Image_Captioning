@@ -21,25 +21,24 @@
         <main>
             <!-- main box -->
             <div class="main_box_cls">
-                <form id="upload_form" enctype="multipart/form-data">
-                    <!-- upload box -->
-                    <div class="upload_box_cls">
-                        <input type="file" id="input_image_id" 
-                            accept="image/*" style="display: none;">
-                        <label for="input_image_id"> 
-                            <img class="displayed_image_cls" alt="upload image"
-                                src="../static/assets/image/imgbox.png">
-                        </label>
-                    </div>
-                    <!-- caption -->
-                    <div id="caption_box_id">
-                        <button type="button" id="generate_btn_id">Generate Caption</button>
-                        <div id="output_caption_id" class="caption_cls">Caption:</div>
-                    </div>
-                </form>
+                <!-- upload box -->
+                <div class="upload_box_cls">
+                    <input type= "file" id= "input_image_id" 
+                        accept= "image/*" style= "display: none;">
+                    <label for="input_image_id"> 
+                        <img class="displayed_image_cls" alt="upload image"
+                            src="../static/assets/image/imgbox.png">
+                    </label>
+                </div>
+                <!-- caption -->
+                <div id="caption_box_id">
+                    <button id="generate_btn_id">Generate Caption</button>
+                    <div id="output_caption_id" class="caption_cls">Caption:</div>
+                </div>
             </div>
         </main>
 
         <script src="../static/js/script.js"></script>
     </body>
+
 </html>

@@ -1,28 +1,41 @@
-function uploadImage(){
+function uploadImage() {
     var file = document.getElementById('input_image_id').files[0];
     var reader = new FileReader();
     reader.onload = function(e) {
         document.querySelector('.displayed_image_cls').src = e.target.result;
     };
     if (file) {
-        reader.readAsDataURL(file);}
+        reader.readAsDataURL(file);
+    }
 }
 
-function generateCaption(){
+function generateCaption() {
     var file = document.getElementById('input_image_id').files[0];
     if (!file) {
         alert("Please upload an image first.");
         return;
     }
 
+    var formData = new FormData();
+    formData.append('image', file);
+
     fetch('/generate_caption', {
-        method: 'POST'
+        method: 'POST',
+        body: formData
     })
-    .then(response => response.text())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
     .then(data => {
         document.getElementById('output_caption_id').innerHTML = "Caption: " + data;
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('output_caption_id').innerHTML = "Error generating caption";
+    });
 }
 
 document.getElementById('input_image_id')
