@@ -19,6 +19,9 @@ function generateCaption() {
     var formData = new FormData();
     formData.append('image', file);
 
+    document.getElementById('loading_spinner').style.display = 'block';
+    document.getElementById('output_caption_id').innerHTML = "";
+
     fetch('/generate_caption', {
         method: 'POST',
         body: formData
@@ -31,10 +34,12 @@ function generateCaption() {
     })
     .then(data => {
         document.getElementById('output_caption_id').innerHTML = "Caption: " + data;
+        document.getElementById('loading_spinner').style.display = 'none';
     })
     .catch(error => {
         console.error('Error:', error);
         document.getElementById('output_caption_id').innerHTML = "Error generating caption";
+        document.getElementById('loading_spinner').style.display = 'none';
     });
 }
 
